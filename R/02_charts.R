@@ -1,7 +1,9 @@
 # 02_charts.R
 # Builds the three charts in output/ from the CSVs in data/.
 
-# install.packages(c("dplyr", "readr", "ggplot2"))  # first run only
+pkgs <- c("dplyr", "readr", "ggplot2")
+to_install <- pkgs[!pkgs %in% rownames(installed.packages())]
+if (length(to_install) > 0) install.packages(to_install)
 library(dplyr)
 library(readr)
 library(ggplot2)
